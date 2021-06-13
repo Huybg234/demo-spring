@@ -1,23 +1,21 @@
-package repository;
+package com.github.huybg.repository;
 
-import entity.Student;
-import org.apache.log4j.Logger;
+import com.github.huybg.entity.Student;
+import com.github.huybg.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
-import util.HibernateUtil;
 
 import java.util.List;
 
 @Repository
 public class StudentDAO {
-    Logger logger = Logger.getLogger(StudentDAO.class);
 
     public List<Student> getAllStudent() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("from Student ").list();
+            return session.createQuery("from Student").list();
         } catch (HibernateException e) {
-            logger.error(e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -29,7 +27,7 @@ public class StudentDAO {
             session.getTransaction().commit();
             return true;
         } catch (HibernateException e) {
-            logger.error(e);
+            e.printStackTrace();
         }
         return false;
     }

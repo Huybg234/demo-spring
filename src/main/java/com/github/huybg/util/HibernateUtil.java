@@ -1,4 +1,4 @@
-package util;
+package com.github.huybg.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

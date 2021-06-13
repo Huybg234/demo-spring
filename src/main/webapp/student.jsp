@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="css/StudentCSS.css">
+    <link rel="stylesheet" href="css/student.css">
 </head>
 <body>
 <form:form action="./student" method="POST">
@@ -19,11 +19,11 @@
         <form:input path="fullName"/>
         <br/>
     </div>
-    <div class="form-group">
-        <form:label path="birthday">Birthday</form:label>
-        <form:input path="birthday"/>
-        <br/>
-    </div>
+<%--    <div class="form-group">--%>
+<%--        <form:label path="birthday">Birthday</form:label>--%>
+<%--        <form:input path="birthday"/>--%>
+<%--        <br/>--%>
+<%--    </div>--%>
     <div class="form-group">
         <form:label path="hometown">Hometown</form:label>
         <form:input path="hometown"/>
@@ -40,7 +40,7 @@
         <br/>
     </div>
     <div class="form-group">
-        <button id="save-button" type="button">Save</button>
+        <button id="save-button" type="submit">Save</button>
     </div>
 </form:form>
 <table id="table">

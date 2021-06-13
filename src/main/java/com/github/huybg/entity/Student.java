@@ -1,4 +1,4 @@
-package entity;
+package com.github.huybg.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -6,11 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -18,13 +14,14 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@XmlRootElement
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "student")
 public class Student implements Serializable {
 
     @Id
     @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "STUDENT_SEQ")
+    @SequenceGenerator(name = "STUDENT_SEQ", sequenceName = "STUDENT_SEQ", allocationSize = 1, initialValue = 1)
     int id;
 
     @Column(name = "full_name", nullable = false)
@@ -41,4 +38,5 @@ public class Student implements Serializable {
 
     @Column(name = "gender", nullable = false)
     String gender;
+
 }
