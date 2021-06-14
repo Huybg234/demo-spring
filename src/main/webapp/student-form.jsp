@@ -43,17 +43,5 @@
         <button id="save-button" type="submit">Save</button>
     </div>
 </form:form>
-<table id="table">
-    <thead>
-    <tr>
-        <th>Họ và tên</th>
-        <th>Ngày sinh</th>
-        <th>Quê quán</th>
-        <th>Tên lớp</th>
-        <th>Giới tính</th>
-    </tr>
-    </thead>
-    <tbody id="table-data"></tbody>
-</table>
 </body>
 </html>

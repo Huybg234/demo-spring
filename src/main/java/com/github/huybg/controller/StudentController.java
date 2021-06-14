@@ -21,18 +21,18 @@ public class StudentController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView student() {
-        return new ModelAndView("student", "command", new Student());
+        return new ModelAndView("student-form", "command", new Student());
     }
 
-    @RequestMapping(value = "/student", method = RequestMethod.POST)
+    @RequestMapping(value = "/student-form", method = RequestMethod.POST)
     public String addNewStudent(@ModelAttribute("abc") Student student, ModelMap modelMap) {
         modelMap.addAttribute("name", student.toString());
         return studentService.insertStudent(student) ? "success" : "error";
     }
 
-    @RequestMapping(value = "/student", method = RequestMethod.GET)
-    public List<Student> getListStudent() {
-        return studentService.getListStudent();
+    @RequestMapping(value = "/student-list", method = RequestMethod.GET)
+    public String getListStudent(ModelMap modelMap) {
+        modelMap.put("students", studentService.getListStudent());
+        return "student-list";
     }
-
 }
