@@ -18,7 +18,7 @@ public class StudentService {
     }
 
     public boolean insertStudent(Student student) {
-        if (student.getFullName() == null) {
+        if (student.getFullName() == null || student.getFullName().trim().equals("")) {
             return false;
         }
 //        if (student.getBirthday() == null) {
