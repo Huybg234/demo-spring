@@ -18,6 +18,7 @@
     <tr>
         <th>Id</th>
         <th>Họ và tên</th>
+        <th>Ngày sinh</th>
         <th>Quê quán</th>
         <th>Tên lớp</th>
         <th>Giới tính</th>
@@ -26,6 +27,7 @@
         <tr>
             <td>${student.id}</td>
             <td>${student.fullName}</td>
+            <td>${student.birthday}</td>
             <td>${student.hometown}</td>
             <td>${student.className}</td>
             <td>${student.gender}</td>

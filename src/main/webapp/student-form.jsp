@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="css/student.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/student.css' />" />
 </head>
 <body>
 
@@ -22,35 +22,37 @@
     }
 </script>
 
-<form:form action="./student" method="POST">
-    <div class="form-group">
-        <form:label path="fullName">Name</form:label>
-        <form:input path="fullName"/>
-        <br/>
-    </div>
-    <%--    <div class="form-group">--%>
-    <%--        <form:label path="birthday">Birthday</form:label>--%>
-    <%--        <form:input path="birthday"/>--%>
-    <%--        <br/>--%>
-    <%--    </div>--%>
-    <div class="form-group">
-        <form:label path="hometown">Hometown</form:label>
-        <form:input path="hometown"/>
-        <br/>
-    </div>
-    <div class="form-group">
-        <form:label path="className">ClassName</form:label>
-        <form:input path="className"/>
-        <br/>
-    </div>
-    <div class="form-group">
-        <form:label path="gender">Gender</form:label>
-        <form:input path="gender"/>
-        <br/>
-    </div>
-    <div class="form-group">
-        <button id="save-button" type="submit">Save</button>
-    </div>
+<form:form id="form" action="./student" method="POST">
+    <root>
+        <div class="form-group">
+            <form:label path="fullName">Name</form:label>
+            <form:input path="fullName"/>
+            <br/>
+        </div>
+        <div class="form-group">
+            <form:label path="birthday">Birthday</form:label>
+            <form:input path="birthday"/>
+            <br/>
+        </div>
+        <div class="form-group">
+            <form:label path="hometown">Hometown</form:label>
+            <form:input path="hometown"/>
+            <br/>
+        </div>
+        <div class="form-group">
+            <form:label path="className">ClassName</form:label>
+            <form:input path="className"/>
+            <br/>
+        </div>
+        <div class="form-group">
+            <form:label path="gender">Gender</form:label>
+            <form:input path="gender"/>
+            <br/>
+        </div>
+        <div class="form-group">
+            <button id="save-button" type="submit">Save</button>
+        </div>
+    </root>
 </form:form>
 </body>
 </html>

@@ -27,8 +27,9 @@ public class Student implements Serializable {
     @Column(name = "full_name", nullable = false)
     String fullName;
 
-//    @Column(name = "birthday", nullable = false)
-//    Date birthday;
+    @Column(name = "birthday", nullable = false)
+    @Temporal(TemporalType.DATE)
+    Date birthday;
 
     @Column(name = "hometown", nullable = false)
     String hometown;
